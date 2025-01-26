@@ -1,7 +1,9 @@
 # Criando um Ransomware com Python
 
-Este projeto, é um desafio realizado durante o Santander Bootcamp Cibersegurança.
-Neste desafio, iremos criar um "ransomware" com PYTHON.
+Este projeto, é um desafio realizado durante o Santander Bootcamp Cibersegurança.  
+Neste desafio, iremos criar um RANSOMWARE com PYTHON.  
+Este RANSOMWARE irá criptografar o texto de um arquivo.  
+Criaremos também o a ferramenta (arquivo), que irá descriptografar o arquivo.
 
 ### Ferramentas Utilizadas
 
