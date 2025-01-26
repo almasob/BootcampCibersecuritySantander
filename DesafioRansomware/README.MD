@@ -18,8 +18,8 @@ Neste desafio, iremos criar um "ransomware" com PYTHON.
 
 - Após fazer isso, é só rodar os arquivos para que a mágica aconteca:
   - Se estiver usando o Windows, abra o CMD e navegue até o repositório onde se encontram os arquivos.
-  - Agora utilize o comando 'python encrypter.py', e veja o arquivo criptografado.
-  - Depois use o comando 'python decrypter' e pronto, o texto original estará de volta ao arquivo.
+  - Agora utilize o comando `python encrypter.py`, e veja o arquivo criptografado.
+  - Depois use o comando `python decrypter` e pronto, o texto original estará de volta ao arquivo.
 
   
 
