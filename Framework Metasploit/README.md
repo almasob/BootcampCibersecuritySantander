@@ -73,7 +73,7 @@ Ataque bem sucedido, tela azul no Windows:
 
 ---
 
-## EXPLORANDO FALHAS NO SSH COM FROCA BRUTA
+## EXPLORANDO FALHAS NO SSH COM FORCA BRUTA
 **SSH (Secure Shell)** é um protocolo de rede criptografado que permite a comunicação segura entre dois computadores.  
 Por padrão, o servidor SSH escuta a porta 22.  
 Para este ataque, utilizaremos o *Metasploitable* como alvo.  
