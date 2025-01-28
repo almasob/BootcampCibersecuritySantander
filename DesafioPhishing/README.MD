@@ -1,6 +1,5 @@
 # Phishing para captura de senhas da Alura
 
-Este projeto, é um desafio realizado durante o Santander Bootcamp Cibersegurança.
 Neste desafio, iremos coletar dados de login de uma conta do Gmail.
 
 ### Ferramentas Utilizadas
