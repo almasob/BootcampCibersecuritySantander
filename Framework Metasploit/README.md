@@ -15,11 +15,11 @@ Para realização dos estudos, utilizei o **mfsconsole**
 - Interface de linha de comando do Metasploit
 - Permite a execução de exploit, payloads, post-exploration e muito mais
 
-Abaixo, todos os casos de estudo:
+Abaixo, todos os casos de estudo(clique em cada um deles e será direcionado na página):
 
 - [EXPLORANDO FALHAS NO FTP](#explorando-falhas-no-ftp)
 - [ATAQUES DOS NO WINDOWS RDP](#ataques-dos-no-windows-rdp)
-- [EXPLORANDO FALHAS NO SSH COM FORCA BRUTA](#explorando-falhas-no-ssh-com-forca-bruta)
+- [EXPLORANDO FALHAS NO SSH COM FROCA BRUTA](#explorando-falhas-no-ssh-com-forca-bruta)
 - [CRIANDO BACKDOOR COM UM EXECUTAVEL](#criando-backdoor-com-um-executavel)
 - [POS EXPLORACAO](#pos-exploracao)
 - [OUTROS MODULOS DE POS EXPLORACAO NO METASPLOIT](#outros-modulos-de-pos-exploracao-no-metasploit)
